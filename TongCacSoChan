@@ -1,0 +1,30 @@
+// tính tổng các số chẵn có trong file đó và xuất ra màn hình concole.
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Main {
+    public static void main(String[] args) {
+        String fileName = "file.txt"; // Đường dẫn đến tệp tin
+        int sumOfEvenNumbers = 0;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] numbers = line.trim().split("\\s+"); // Tách các số dựa trên khoảng trắng
+                for (String number : numbers) {
+                    int n = Integer.parseInt(number);
+                    if (n % 2 == 0) { // Kiểm tra số chẵn
+                        sumOfEvenNumbers += n;
+                    }
+                }
+            }
+            System.out.println("Tổng các số chẵn trong tệp tin là: " + sumOfEvenNumbers);
+        } catch (IOException e) {
+            System.err.println("Không thể đọc tệp tin: " + e.getMessage());
+        } catch (NumberFormatException e) {
+            System.err.println("Lỗi chuyển đổi số: " + e.getMessage());
+        }
+    }
+}

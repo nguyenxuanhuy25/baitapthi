@@ -1,0 +1,28 @@
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
+// then press Enter. You can now see whitespace characters in your code.
+public class Main {
+    public static void main(String[] args) {
+        String fileName = "file.txt"; // Đường dẫn đến tệp tin
+        int tong = 0;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                int number = Integer.parseInt(line.trim());
+                if (number % 2 == 0) { // Kiểm tra số chẵn
+                    tong += number;
+                }
+            }
+            System.out.println("Tổng các số chẵn trong tệp tin là: " + tong);
+        } catch (IOException e) {
+            System.err.println("Không thể đọc tệp tin: " + e.getMessage());
+        } catch (NumberFormatException e) {
+            System.err.println("Lỗi chuyển đổi số: " + e.getMessage());
+        }
+    }
+}
