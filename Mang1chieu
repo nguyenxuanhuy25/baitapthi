@@ -1,3 +1,9 @@
+// Câu 1: Mảng 1 chiều:
+   a)	Viết chương trình nhập n phần tử từ màn hình console, xuất kết qủa ra màn hình console tổng các phần tử đã nhập.
+   b)	Viết chương trình nhập n phần tử từ màn hình console, xuất kết qủa ra màn hình console các phần tử chẵn đã nhập.
+   c)	Viết chương trình nhập n phần tử từ màn hình console, xuất kết qủa ra màn hình console các phần tử lẻ đã nhập.
+-----------------------------
+
 package Mang1Chieu;
 
 import java.util.Scanner;
